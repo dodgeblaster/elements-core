@@ -1,9 +1,9 @@
 import { test } from 'node:test'
 import assert from 'node:assert'
-import { createEventBus } from './index.mjs'
+import core from '../index.mjs'
 
 test('can register and emit an event', () => {
-    const events = createEventBus()
+    const events = core.events.createEventBus()
     const state = []
     const gameEvent = {
         module: 'one',
@@ -30,7 +30,7 @@ test('will return an error result when trying to emit an invalid event', () => {
         }
     }
 
-    const events = createEventBus()
+    const events = core.events.createEventBus()
     const result = events.emit('INVALID', gameEvent)
     assert.deepEqual(result, {
         error: 'INVALID is not a valid event',

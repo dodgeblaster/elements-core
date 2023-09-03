@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.mjs",
     "scripts": {
-        "test": "node --test",
+        "test": "node --test --experimental-test-coverage",
         "build": "esbuild index.mjs --bundle --outfile=elements-core.js --minify --target=chrome58,firefox57,safari11,edge16 --format=esm"
     },
     "keywords": [],
